@@ -1,13 +1,11 @@
 # Python 的 built-in function 內建函數可以隨時隨地的被呼叫，不需要import module
-
-# 1. abs() 返回數字的絕對值
 from hashlib import new
 
-
+# 1. abs() 返回數字的絕對值
 print("abs(-25) =",abs(-25))       # abs(-25) = 25
 print("abs(100.12) =",abs(100.12)) # abs(100.12) = 100.12
 
-# 2. all(iterable) 判斷傳入的可迭代參數裡的元素，是否都回True，若元素是0、空、None、False則為False
+# 2. all(iterable) 判斷傳入的可迭代參數裡的元素，是否都為True，若元素是0、空、None、False則為False
 print(all([1,2,3,4]))              # True
 print(all([1,2,3,0]))              # False
 print(all([]))                     # 注意,空串列為True
@@ -62,3 +60,39 @@ def square(x):
 
 newlist = map(square, [1,2,3,4,5])
 print(list(newlist))                 # [1, 4, 9, 16, 25]
+
+# 13. max() 取最大值
+print(max(100,500,20,1000,300))      # 1000
+lista=[100,500,20,2000,300]
+print(max(lista))                    # 2000
+
+# 14. min() 取最小值
+print(min(100,500,20,1000,300))      # 20
+lista=[100,500,20,2000,300]
+print(min(lista))                    # 20
+
+# 15. range(start, stop[, step]) 會return整數序列的對象(class 'range')，而不是list，所以要用list()轉換
+print(list(range(10)))               # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(list(range(1,11)))             # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(list(range(0,30,5)))           # [0, 5, 10, 15, 20, 25]
+print(list(range(100,19,-5)))        # [100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20] 倒序
+
+# 16. slice(start, stop[, step]) 切片
+String = "Programming"
+s1 = slice(3)
+s2 = slice(1, 5, 2)
+print(String[s1])                    # Pro
+print(String[s2])                    # rg
+
+# 17. lambda 無名函數，跟function類似，但function需要命名識別字identifier，基本上lambda就是function的簡化，因此某些場合可以用lambda運算式代替
+# lambda關鍵字後面空一格，接上需要用的變數，變數名可自訂，然後加上冒號，後面接上運算式，這裡把lambda運算式指派給變數a
+a = lambda x : x ** 5 + 2
+print(a)                             # <function <lambda> at 0x0000021639E11940>
+print(a(2))                          # 34
+
+# 18. sorted(iterable[, cmp=None][, key=None][, reverse=False/True]) 對可跌代iterable的對象進行排序，相比sort()只能用在list型別，而sorted可對所有可跌代iterable使用
+L = [3,4,1,5,2]
+print(sorted(L))                     # [1, 2, 3, 4, 5] default是True升序
+print(sorted(L,reverse=True))        # [5, 4, 3, 2, 1] 降序
+L = ["aaaa","bbb","cc","d"]
+print(sorted(L,key=len))             # ['d', 'cc', 'bbb', 'aaaa'] 在排序之前先用len()計算，再用len()的return值排序
