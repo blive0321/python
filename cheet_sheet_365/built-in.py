@@ -89,6 +89,13 @@ print(String[s2])                    # rg
 a = lambda x : x ** 5 + 2
 print(a)                             # <function <lambda> at 0x0000021639E11940>
 print(a(2))                          # 34
+# 最能展現lambda匿名函數的特性，是在function裡面加入匿名函數，如下
+def myfunc(n):
+  return lambda a : a * n             # a * 2
+
+mydoubler = myfunc(2)                 # lambda a : a * 2
+
+print(mydoubler(11))                  # 22
 
 # 18. sorted(iterable[, cmp=None][, key=None][, reverse=False/True]) 對可跌代iterable的對象進行排序，相比sort()只能用在list型別，而sorted可對所有可跌代iterable使用
 L = [3,4,1,5,2]
