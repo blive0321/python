@@ -1,3 +1,5 @@
+# assert 斷言的用法，斷言在如果expression不滿足的情況下會直接return錯誤
+
 class Account():
     def __init__(self, number, name):
         self.number = number
