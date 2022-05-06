@@ -15,7 +15,7 @@ print(all(()))                     # 注意,空tuple為True
 print(divmod(6,2))                 # (3, 0)
 print(divmod(7,2))                 # (3, 1)
 
-# 4. enumerate(sequence, [start=0]) 將一個可以遍歷的sequence(ex:list, tuple, string)，組合為一個索引序列，並印出來 []代表可選可不選，設定索引開始的數字
+# 4. enumerate(sequence, [start=0]) 將一個可以遍歷的序列sequence(ex:list, tuple, string)，組合為一個索引序列，並印出來 []代表可選可不選，設定索引開始的數字
 seasons = ["spring","summer","fall","winter"]
 for id, weather in enumerate(seasons,start=7):
     print(id,weather)
