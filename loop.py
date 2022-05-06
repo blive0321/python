@@ -14,7 +14,7 @@ for n in lakers:
     print ("Player :",n)
     print (len(n))
 
-# difference between continue , break and pass
+# difference between break, continue and pass
 for i in "Hey Jude":
     if i == "u":
         break
