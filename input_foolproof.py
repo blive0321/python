@@ -1,3 +1,5 @@
+# 此.py檔案，內容為使用者互動式的防呆機制
+
 import re
 from rich.console import Console
 from rich.table import Column, Table
