@@ -20,3 +20,10 @@ class Account():
 a = Account("A123" , "Brandon")
 a.deposit(1000)
 print("Balance : ", a.balance)
+# Balance :  1000
+
+# a.deposit(-500)
+# AssertionError: 必須是大於 0 的整數
+
+# a.withdraw(2000)
+# RuntimeError: balance not enough
