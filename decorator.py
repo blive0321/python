@@ -19,10 +19,14 @@ import time
 
 def timer(func):
     def wrap(sleep_time):
+        print("裝飾器的內部函式先執行")
         t_start = time.time()
+        sleep_time += 1
+        print("執行callback, 也就是外部函式dosomething")
         func(sleep_time) # callback function，其實就是本來的函示dosomething(sleep_time)這個函式
         t_end = time.time()
-        t_count = t_end = t_start
+        t_count = t_end - t_start
+        print("再回到內部函式")
         print('[花費時間]', t_count)
 
     return wrap
@@ -30,7 +34,13 @@ def timer(func):
 @timer
 # 等於 foo = timer(dosomething)
 def dosomething(sleep_time):
-    print('do some thing')
+    print(f"do some thing, sleep {sleep_time} sec.")
     time.sleep(sleep_time)
 
 dosomething(3) #呼叫帶有裝飾器的函示
+_
+# 裝飾器的內部函式先執行
+# 執行callback,也就是外部函式
+# do some thing, sleep 4 sec.
+# 再回到內部函式
+# [花費時間] 4.004133462905884
